@@ -15,10 +15,10 @@ BLUE = (0, 0, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 PAD = (5, 5)
-ROWS = 20
+ROWS = 10
 COLS = 10
-WIDTH = 70
-HEIGHT = 70
+WIDTH = 30
+HEIGHT = 30
 SCREEN_WIDTH = COLS * (PAD[0] + WIDTH) + PAD[1]
 SCREEN_HEIGHT = ROWS * (PAD[0] + HEIGHT) + PAD[1]
 # Set the height and width of the SCREEN
