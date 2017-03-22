@@ -7,7 +7,8 @@ from graph import Node
 
 class pathFinder(object):
     
-    def __init__(self, Node):
-        
+    def aStar(start, end):
+       start = graph.Node.value
+        queue = [start]
         
         
