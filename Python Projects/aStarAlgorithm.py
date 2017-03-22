@@ -5,14 +5,9 @@ import drawablenode
 from graph import Graph
 from graph import Node
 
-
-class Pathfinding(object):
+class pathFinder(object):
     
- #   def aStar(start, goal):
- #       Dequeued = {}
- #       Queued = {start}
- #       From = graph.Graph
- #       gScore = math.inf
- #       gScore[Start] = 
- #       fscore = graph.Graph
-
+    def __init__(self, Node):
+        
+        
+        
