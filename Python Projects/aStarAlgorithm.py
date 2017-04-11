@@ -7,14 +7,14 @@ from graph import Node
 
 class pathFinder(object):
     '''pathfinder'''
-    Start = [posx , posy]
+
     Openqueue = []
     Closequeue = []
-    Openqueue.append(Start)
+    
 
         def aStart(Start, Goal, graph):
-            Start = Graph.
-            
+        Start =         
+        Openqueue.append(Start)        
 
         #the append and insert functions for lists will be how I add to my queue
         #remove will be a function i use to dequeue my nodes        
