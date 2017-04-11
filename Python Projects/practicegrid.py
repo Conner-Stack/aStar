@@ -10,9 +10,18 @@ green = (0,255,0)
 red = (255, 0, 0)
 
 #setting the size of the display window
-size = (700, 500)
+size = (255, 255)
 #creates the window
 screen = pygame.display.set_mode(size)
+#setting size of grid geometry
+Width = 20
+Height =20
+#the seperation between my drawn geometry on the grid
+Margin = 5
+pygame.draw(Width, Height)
+#variable for the number of elements per row or column
+Rows = 5
+Cols = 5 
 
 #sets a title for the window
 pygame.display.set_caption("Practice Grid")
@@ -36,13 +45,6 @@ while done == False:
 screen.fill(White)
 #updates the game after every action, not sure how it works, just that it does.
 pygame.display.flip()
-
-
-
-
-
-
-
 #sets the maximum fps value to 20fps
 clock.tick(20)
 
