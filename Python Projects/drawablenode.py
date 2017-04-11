@@ -9,10 +9,14 @@ class DrawableNode(object):
 
     def __init__(self, graphnode):
         # astar vars
+        #posx and posy will be my starting coordinates
         posx = graphnode.value[0]
         posy = graphnode.value[1]
+        #adjacents will be the current node's children
         self.adjacents = []
+        #this will be the last node previously visited
         self.parent = None
+        #I'm guessing this will be what determines if the space is a path or an obstacle
         self._walkable = True
         self._g = 0
         self._h = 0
@@ -20,6 +24,7 @@ class DrawableNode(object):
 
         # drawing vars
         SIZE = 30
+
         self.width = SIZE
         self.height = SIZE
         self.id = id
@@ -106,3 +111,11 @@ class DrawableNode(object):
         # pygame.draw.rect(screen, self._color, self.rect)
         self.surface.fill(self._color)
         screen.blit(self.surface, self.screenpos)
+              
+      
+      
+
+           
+    
+    
+    
