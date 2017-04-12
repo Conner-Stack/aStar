@@ -10,17 +10,20 @@ class pathFinder(object):
 
  
     
-
+#create function to set your start and end goal
     def aStart(Start, Goal, graph):
-            Openqueue = []
-            Closequeue = []
-            Openqueue.append(Start)
+          
+            # create a list to store children
+            Open = []
+            #create a list to store parents
+            Close = []
+            #place Start in the open queue
+            Open.append(Start)
             current = Start
-            Openqueue.append(current)  
-            while current!=Goal:
-                #make current equal a child node
-                current = 
-                Closequeue.append(current)
+              for Node in Open:
+              if current.value < Node.value:
+                      
+
 
                     
                       
