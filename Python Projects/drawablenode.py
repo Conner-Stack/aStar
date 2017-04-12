@@ -18,8 +18,12 @@ class DrawableNode(object):
         self.parent = None
         #I'm guessing this will be what determines if the space is a path or an obstacle
         self._walkable = True
+        #the member variables of the pathfinder equation F = G + H where
+        #g equals the cost of the path from the start node to the goal node
         self._g = 0
+         #h equals a heuristic designed to count the distance from the goal to the current node
         self._h = 0
+        #f represents the total score created by adding g and h
         self._f = 0
 
         # drawing vars

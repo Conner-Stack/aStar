@@ -4,6 +4,7 @@ import graph
 import drawablenode
 from graph import Graph
 from graph import Node
+from drawablenode import DrawableNode
 
 class pathFinder(object):
     '''pathfinder'''
@@ -17,17 +18,14 @@ class pathFinder(object):
             Open = []
             #create a list to store parents
             Close = []
+            Start = DrawableNode
+            Start.f = 0
             #place Start in the open queue
             Open.append(Start)
             current = Start
-              for Node in Open:
-              if current.value < Node.value:
-                      
-
-
-                    
-                      
-
-
-        #the append and insert functions for lists will be how I add to my queue
-        #remove will be a function i use to dequeue my nodes        
+            node = DrawableNode
+              for node in Open:
+                  #not right, but kind of a placeholder until i figure out how to do it
+              if current.value < node.f:
+                  
+                  
