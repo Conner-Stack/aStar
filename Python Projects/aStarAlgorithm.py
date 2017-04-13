@@ -22,8 +22,13 @@ class pathFinder(object):
             Open.append(Start)
             
             current = Start
-              for neighbor in get_neighbors:
+              for neighbor in get_neighbors(current):
+                NotClose = True
+                while(NotClose = True):
+                    
                   if Walkable == True:
+                      
+                          
                       Open.append(neighbor)
                       
                       
