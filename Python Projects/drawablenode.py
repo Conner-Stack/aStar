@@ -3,7 +3,7 @@ import math
 import graph
 from graph import Graph
 from graph import Node
-
+from graph import get_neighbors
 class DrawableNode(object):
     '''drawable node'''
 
