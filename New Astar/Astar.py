@@ -43,7 +43,17 @@ class Node(object):
             '''returns a bool with value of true if list is empty'''
             for i in queue:
                 return bool(i = None)
+
+                def heuristic(currentNode, goalNode):
+                    '''for calculating h'''
+                    currentNode = (currentNode.posx, currentNode.posy)
+                    goalNode = (goalnode.posx, goalnode.posy)
+                    return (currentnode.posx - goalnode.posx) + (currentnode.posy - goalnode.posy)    
             
+            def graphnode(x,y):
+                #not sure if i needed this, is supposed to be able to set coordinates for nodes
+                return graphnode[x][y]
+
         def aStar(start, goal, graph):
             '''this is our pathfinder, hopefully'''
             Openlist = []
