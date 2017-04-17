@@ -1,5 +1,5 @@
 import pygame
-
+import math
 
 class Node(object):
     '''class for Nodes'''
@@ -51,7 +51,8 @@ class Node(object):
             Start = []
             Openlist.append(start)
             while empty(Openlist) is False:
-                current.node._f = start.node._f
+               
+               
 
 
             
