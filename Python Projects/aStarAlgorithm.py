@@ -16,6 +16,7 @@ class pathFinder(object):
             #create a list to store parents
         Closelist = []
             #make a list for children and fill with nodes adjacent to starting node
+        adjacent = []
         fCost = 0
         gScore = 0
         hScore = 0
@@ -33,7 +34,8 @@ class pathFinder(object):
                     #moving variable lowest from openlist to closed list (don't know how it even became part of the open list)
                     Openlist.remove(lowest)
                     Closelist.append(lowest)
-                    adjacent = graph.get_neighbors(Start)
-                    for i in adjacent:
+                  for i in graph.get_neighbors(Start):
+                
+                    
                         
                     
