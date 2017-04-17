@@ -54,6 +54,29 @@ class Node(object):
                 #not sure if i needed this, is supposed to be able to set coordinates for nodes
                 return graphnode[x][y]
 
+                def neighbors(node):
+                    right = [1, 0]
+                    left = [-1, 0]
+                    top = [0, 1]
+                    bottom = [0, -1]
+                    topright = [1, 1]
+                    bottomright = [1 , -1]
+                    topleft = [-1 , 1]
+                    bottomleft = [1, -1]
+                    neighbors = []
+                    childnodes = [right, left, top, bottom, topleft, topright, bottomleft, bottomright]
+                    for i in childnodes:
+                        x = i[0] + node.value[0]
+                        y = i[1] + node.value[1]
+                        grab_node = graphnode(x,y)
+                        if grab_node:
+                            neighbors.append(graphnode)
+                    return neighbors
+                            
+                        
+                        
+
+
         def aStar(start, goal, graph):
             '''this is our pathfinder, hopefully'''
             Openlist = []
