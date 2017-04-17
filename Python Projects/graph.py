@@ -56,16 +56,22 @@ def get_neighbors(node, graph):
 
     bottom = [0, -1]
     bottom_right = [1, -1]
+    #initiate empty list to hold the future neighbors of the given node
     neighbors = []
+    # a list containing the coordinates of each adjacent node relative to my node
     dirs = [right, top_right, top, top_left,
             left, bottom_left, bottom, bottom_right]
-
+            #a for loop used to equate the position of each node in the dir list relative to my node
     for i in dirs:
+        # item1 is the first item in each direction and my node
         item1 = i[0] + node.value[0]
+        # same as above but for the second item in the lists
         item2 = i[1] + node.value[1]
+        #grabs each node individually to put into the neighbors list
         fetch_node = graph.get_node([item1, item2])
         if fetch_node:
             neighbors.append(fetch_node)
+            #returns the list of neighbors
     return neighbors
 
 
