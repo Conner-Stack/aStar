@@ -32,6 +32,7 @@ class Node(object):
         '''for calculating g'''
         #makes childnodes a list of the neighbors of the currentnode
         childnodes = currentnode.getNeightbors
+        currentnode = childnodes.parent
         #for each element iterated in childnodes
         for i in childnodes:
             dirr = [i[0] - currentnode[0], i[1] - currentnode[1]]
