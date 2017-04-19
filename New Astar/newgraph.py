@@ -11,11 +11,15 @@ class Graph(object):
         self.nodelist = []
         for i in range(0, col):
             for j in range(0, row):
-                nodeid = str(i) + ',' + str(j)
+                nodeid = str(i) + str(j)
+                
     def getnode(self, node):
         '''gets a node in the graph at value of [1,1]'''
-        
-                
+        for i in self.nodelist:
+            for j in self.nodelist:
+                if node.nodeid is self.nodelist.nodeid:
+                    return node
+
 def getNeighbors(node, graph):
     '''gets the node value of neighbors to your current node'''
     right = [1, 0]

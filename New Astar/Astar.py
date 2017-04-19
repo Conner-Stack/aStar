@@ -28,7 +28,6 @@ class Node(object):
         self.hscore = 10 * (abs(self.posx - goalnode.posx) + abs(self.posy - goalnode.posy))
         return self.hscore
 
-        #function for getting the value of g
     def gvalue(self):
         '''for calculating g'''
         if self.parent.posx is self.posx or self.parent.posy is self.posy:
