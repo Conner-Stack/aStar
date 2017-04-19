@@ -23,27 +23,23 @@ class Node(object):
         if queue is 0:
             return True
 
-    def hValue(self, currentNode, goalNode):
+    def hvalue(self, currentnode, goalnode):
         '''for calculating h'''
-        h = 10 * (abs(currentNode.posx - goalNode.posx) + abs(currentNode.posy - goalNode.posy))
-        return h
+        currentnode.hScore = 10 * (abs(currentnode.posx - goalnode.posx) + abs(currentnode.posy - goalnode.posy))
+        return hScore
         #function for getting the value of g
-    def gValue(self, currentnode):
+    def gvalue(self, currentnode):
         '''for calculating g'''
         #makes childnodes a list of the neighbors of the currentnode
         childnodes = currentnode.getNeightbors
-        currentnode = childnodes.parent
-        #for each element iterated in childnodes
-        for i in childnodes:
-            dirr = [i[0] - currentnode[0], i[1] - currentnode[1]]
-            if  dirr in currentnode.neighbors.diag:
-                score = currentnode.gValue(parent) + 14
-                return score
+        if currentnode.posx is childnodes.posx or currentnode.posy is childnodes.posy:
+            gScore = currentnode.gScore + 10 
+        else:
+            gScore = currentnode.gScore + 14
+        return gScore
 
     def fCost(currentNode, goalNode):
-        g = gValue(currentNode)
-        h = hValue(currentNode, goalNode)
-        f = g + h
+        f = gValue(currentNode) + hValue(currentNode, goalNode)
         return f
 def aStar(start, goal, graph):
     '''this is our pathfinder, hopefully'''

@@ -1,6 +1,6 @@
 import pygame
-import math
-
+import Astar
+from Astar import Node
 class Graph(object):
     ''' node graph '''
 
@@ -21,6 +21,7 @@ class Graph(object):
         return None
 
 def getNeighbors(node, graph):
+    '''gets the node value of neighbors to your current node'''
     right = [1, 0]
     left = [-1, 0]
     top = [0, 1]
