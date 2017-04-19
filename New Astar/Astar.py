@@ -1,7 +1,7 @@
 import pygame
 import math
 import newgraph
-from newgraph import Graph as graph
+from newgraph import Graph
 from newgraph import getNeighbors
 
 class Node(object):
@@ -14,37 +14,38 @@ class Node(object):
         self.posy = position[1]
         self.parent = None
         self.walkable = True
-        self.gScore = 0
-        self.hScore = 0
-        self.fScore = 0
+        self.gscore = 0
+        self.hscore = 0
+        self.fscore = 0
 
     def empty(self, queue):
         '''returns a bool with value of true if list is empty'''
         if queue is 0:
             return True
 
-    def hvalue(self, currentnode, goalnode):
+    def hvalue(self, goalnode):
         '''for calculating h'''
-        currentnode.hScore = 10 * (abs(currentnode.posx - goalnode.posx) + abs(currentnode.posy - goalnode.posy))
-        return hScore
-        #function for getting the value of g
-    def gvalue(self, currentnode):
-        '''for calculating g'''
-        #makes childnodes a list of the neighbors of the currentnode
-        childnodes = currentnode.getNeightbors
-        if currentnode.posx is childnodes.posx or currentnode.posy is childnodes.posy:
-            gScore = currentnode.gScore + 10 
-        else:
-            gScore = currentnode.gScore + 14
-        return gScore
+        self.hscore = 10 * (abs(self.posx - goalnode.posx) + abs(self.posy - goalnode.posy))
+        return self.hscore
 
-    def fCost(currentNode, goalNode):
-        f = gValue(currentNode) + hValue(currentNode, goalNode)
-        return f
-def aStar(start, goal, graph):
+        #function for getting the value of g
+    def gvalue(self):
+        '''for calculating g'''
+        if self.parent.posx is self.posx or self.parent.posy is self.posy:
+            self.gscore = self.parent.gscore + 10
+        else:
+            self.gscore = self.parent.gscore + 14
+        return self.gscore
+
+    def fcost(self):
+        '''finishes the equation'''
+        self.fscore = self.gscore + self.hscore
+        return self.fscore
+
+def astar(start, goal, graph):
     '''this is our pathfinder, hopefully'''
-    Openlist = []
-    Closelist = []
+    openlist = []
+    crloselist = []
     Openlist.append(start)
     while empty(Openlist) is False:
         for i in Openlist:

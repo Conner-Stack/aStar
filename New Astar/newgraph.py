@@ -8,18 +8,14 @@ class Graph(object):
         '''our graph constructor'''
         col = dims[0]
         row = dims[1]
-        self.nodeList = []
+        self.nodelist = []
         for i in range(0, col):
             for j in range(0, row):
-                self.nodeList.append(str(i) + ',' + str(j))
-
-    def getNode(self, id):
-        '''gets a node in the graph'''
-        for i in self.nodeList:
-            if i.id is id:
-                return i
-        return None
-
+                nodeid = str(i) + ',' + str(j)
+    def getnode(self, node):
+        '''gets a node in the graph at value of [1,1]'''
+        
+                
 def getNeighbors(node, graph):
     '''gets the node value of neighbors to your current node'''
     right = [1, 0]
