@@ -28,23 +28,18 @@ class Node(object):
         self.hscore = 10 * (abs(self.posx - goalnode.posx) + abs(self.posy - goalnode.posy))
         return self.hscore
 
-    def gvalue(self):
-        '''for calculating g'''
-        if self.parent.posx is self.posx or self.parent.posy is self.posy:
-            self.gscore = self.parent.gscore + 10
-        else:
-            self.gscore = self.parent.gscore + 14
-        return self.gscore
-
     def fcost(self):
         '''finishes the equation'''
         self.fscore = self.gscore + self.hscore
         return self.fscore
 
+def gvalue(currentnode, neighbor):
+    '''for calculating g'''
+
 def astar(start, goal, graph):
     '''this is our pathfinder, hopefully'''
     openlist = []
-    crloselist = []
+    closelist = []
     Openlist.append(start)
     while empty(Openlist) is False:
         for i in Openlist:
