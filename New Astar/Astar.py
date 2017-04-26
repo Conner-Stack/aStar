@@ -147,12 +147,20 @@ def astar(start, goal, graph):
         #calls the getneighbor function using the current node
         #to initialize all the neighbors adjacent to the current node in the neighbors list
         current.neighbors = getneighbors(current, graph)
+        #starts a loop for all the neighbors adjacent to the current node
         for node in current.neighbors:
+            #conditional evaluating if a neighbor is or isn't in the closed list
             if node not in closelist:
+                #if evaluates to true, append the neighbor to the open queue
                 openlist.append(node)
+                #grab the gvalue of the current node to the current neighboring node
                 gvalue(current, node)
+                #grabs the hvalue of the neighboring node to the goal node
                 hvalue(node, goal)
+                #sets the fvalue of the neighboring node
                 fvalue(node)
+        #not sure how it works, but sorts the list from the lowest cost
+        #to the highest cost of the nodes in the open queue
         openlist.sort(key=lambda node: node.fscore)
         came_from = current
         path.append(came_from)
